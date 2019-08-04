@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>feedback</title>
+    <link href="./resources/style.css" type="text/css" rel="stylesheet">
+<!--JavaScript-->
+        <script type = "text/javascript">
+        function validate() {
+
+           if( document.feedbackform.caseid.value == "" ) {
+              alert( "Please provide a Case ID!" );
+              document.feedbackform.caseid.focus() ;
+              return false;
+           }
+           if( document.feedbackform.subject.value == "" ) {
+              alert( "Please provide a subject!" );
+              document.feedbackform.subject.focus() ;
+              return false;
+
+         }
+         if( document.feedbackform.comment.value == "" ){
+            alert( "Please provide a subject!" );
+            document.feedbackform.comment.focus() ;
+            return false;
+         }
+          return( true );
+        }
+
+        </script>
+  </head>
+  <body>
+
+    <div class="container">
+
+<!--Header Container-->
+      <header>
+        <img src="./resources/images/umdlogo.gif" alt="University of Maryland Logo">
+      </header>
+
+<!--Main Content Area-->
+    <div class="main-container">
+      <aside id="sidemenu">
+        <ul>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Payroll Information</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Performance Appraisal</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Time Sheet</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Leave Management</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Health Benefits</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="./orgchart/orgchart.html">Organization Chart</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Access Management</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Career Development</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">My Profile</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Expense Reimbursement</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Retirement Planning</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Ticket Management</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Documents</li>
+          <li><img style="padding-right:10px;" src="./resources/images/arrow.gif" alt="Arrow"><a href="#">Feedback</li>
+        </ul>
+      </aside>
+
+<!--Table Header-->
+
+    <div class="table-info-header">
+      <p><strong style="color:black;">Please complete following form</strong></p>
+    </div>
+
+<!--FORM TABLE-->
+    <div class="table">
+      <form action = "/cgi-bin/test.cgi" name = "feedbackform" onsubmit = "return(validate());">
+
+      <legend class="legend" style="color: #a43333;"><strong>FEEDBACK</strong></legend>
+      <br>
+
+      <table>
+<!--Case ID Input-->
+      <tr>
+        <td><strong style="color:black;">Case ID:</strong></td>
+        <td><input type="text" name="caseid" /></td>
+      </tr>
+
+<!--Subject field-->
+      <tr>
+        <td><strong style="color:black;">Subject:<span style="color: red;">&#42;</span></strong></td>
+        <td><input type="text" name="subject" style="width: 400px;"/></td>
+      </tr>
+
+<!--Comment-->
+      <tr>
+        <td valign="top" class="mainText-small"><strong style="color:black;">Comment:</strong></td>
+        <td><textarea name="comment" cols="40" rows="10" id="comment" ></textarea></td>
+      </tr>
+
+<!--Submit button-->
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" value="submit">
+      </tr>
+      </table>
+
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <footer><div>Copyright (c) UMD. All Right Reserved</div></footer>
+    </div>
+
+    </div>
+  </body>
+</html>
